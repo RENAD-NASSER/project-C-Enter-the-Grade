@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication50
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            string count = "YES";
+            while(count=="YES")
+            {
+                student student = new student();
+                Console.WriteLine("Enter The student's Name :");
+                student.Name = Console.ReadLine();
+                Console.WriteLine("Enter The student's Grade :");
+                student.Degree = int.Parse(Console.ReadLine());
+
+               Console.WriteLine("student "+ "is " +student.passed);
+               Console.WriteLine("\nIf you want to continue , Enter Yes and stop Enter No ? ");
+               count = Console.ReadLine().ToUpper();
+
+            Console.ReadKey();
+            }
+        }
+    }
+    class student
+    {
+        public string Name { get; set; }
+        public int Degree { get; set; }
+        public string passed { get { String result = (Degree < 60) ? "Faild" : "Passed"; return result; } }
+    }
+}
